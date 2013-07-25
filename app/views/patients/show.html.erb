@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @patient.name %>
+</p>
+
+<p>
+  <strong>Street address:</strong>
+  <%= @patient.street_address %>
+</p>
+
+<p>
+  <strong>Admit date:</strong>
+  <%= @patient.admit_date %>
+</p>
+
+<p>
+  <strong>Discharge date:</strong>
+  <%= @patient.discharge_date %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @patient.zip %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @patient.state %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @patient.city %>
+</p>
+
+<p>
+  <strong>ID:</strong>
+  <%= @patient.id %>
+</p>
+
+<p>
+  <strong>Procedures:</strong>
+  <% @patient.procedures.each do |p| %>
+    <li>
+    <%= p.name %>
+    <%= p.category %>
+    <%= p.cost %>
+    <%= p.time %>
+    <%= p.physician.name %>
+    </li>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %>

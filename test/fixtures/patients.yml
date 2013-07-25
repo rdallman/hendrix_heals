@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  street_address: MyString
+  admit_date: 2013-07-24
+  discharge_date: 2013-07-24
+  zip: 1
+  state: MyString
+  city: MyString
+
+two:
+  name: MyString
+  street_address: MyString
+  admit_date: 2013-07-24
+  discharge_date: 2013-07-24
+  zip: 1
+  state: MyString
+  city: MyString
