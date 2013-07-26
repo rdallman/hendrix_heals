@@ -20,14 +20,6 @@
     <%= f.text_field :street_address %>
   </div>
   <div class="field">
-    <%= f.label :admit_date %><br>
-    <%= f.date_select :admit_date %>
-  </div>
-  <div class="field">
-    <%= f.label :discharge_date %><br>
-    <%= f.date_select :discharge_date %>
-  </div>
-  <div class="field">
     <%= f.label :zip %><br>
     <%= f.number_field :zip %>
   </div>
@@ -38,6 +30,10 @@
   <div class="field">
     <%= f.label :city %><br>
     <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :room_id  %><br>
+    <%= f.collection_select :room_id, Room.joins('LEFT OUTER JOIN patients ON patients.room_id = rooms.id').where("patients.id IS null"), :id, :location %>
   </div>
   <div class="actions">
     <%= f.submit %>

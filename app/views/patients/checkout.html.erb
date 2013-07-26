@@ -1,0 +1,4 @@
+<% form_for @patient, :method => :put do |f| %>
+  <%= f.hidden_field :discharge_date, :value => Date.today %>
+  <%= f.submit "Approve" %>
+<% end %>

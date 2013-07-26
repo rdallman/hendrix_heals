@@ -10,6 +10,7 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -23,6 +24,7 @@
         <td><%= link_to 'Show', patient %></td>
         <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
         <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Checkout', patient_path(:disharge_date => Date.today), :method => :put %></td>
       </tr>
     <% end %>
   </tbody>

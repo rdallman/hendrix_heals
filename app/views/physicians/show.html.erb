@@ -17,13 +17,26 @@
 
 <p>
   <strong>Patients:</strong>
-  <% @physician.procedures.each do |p| %>
-    <li>
-    <%= p.patient.id %>
-    <%= p.patient.name %>
-    <%= p.patient.room.try(:location) %>
-    <%= p.name %>
-  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Procedure</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @physician.procedures.each do |p| %>
+        <tr>
+          <td><%= p.patient.id %></td>
+          <td><%= p.patient.name %></td>
+          <td><%= p.patient.room.try(:location) %></td>
+          <td><%= p.name %></td>
+        </tr>
+      <% end %>
+      </tbody>
+  </table>
 </p>
 
 <%= link_to 'Edit', edit_physician_path(@physician) %> |

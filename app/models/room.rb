@@ -1,5 +1,5 @@
 class Room < ActiveRecord::Base
-  belongs_to :patient
+  has_one :patient
 
   def location
     return [number, bed].join('')

@@ -1,5 +1,7 @@
 HendrixHeals::Application.routes.draw do
 
+  resources :treatments
+
   root 'static_pages#home'
 
   get "static_pages/help"
@@ -13,7 +15,7 @@ HendrixHeals::Application.routes.draw do
 
   resources :patients do
     member do
-      get :bill
+      get :bill, :checkout
     end
   end
 

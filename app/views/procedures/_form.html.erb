@@ -16,12 +16,8 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :category %><br>
-    <%= f.text_field :category %>
-  </div>
-  <div class="field">
-    <%= f.label :cost %><br>
-    <%= f.number_field :cost %>
+    <%= f.label :treatment_id %><br>
+    <%= f.collection_select :treatment_id, Treatment.all, :id, :category %>
   </div>
   <div class="field">
     <%= f.label :time %><br>
@@ -29,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :physician_id %><br>
-    <%= f.collection_select :physician_id, Physician.all, :id, :name %>
+    <%= f.collection_select :physician_id, Physician.all, :id, :name, {}, { :multiple => true } %>
   </div>
   <div class="field">
     <%= f.label :patient_id %><br>
