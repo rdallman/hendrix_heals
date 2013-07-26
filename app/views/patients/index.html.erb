@@ -4,12 +4,9 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Street address</th>
       <th>Admit date</th>
       <th>Discharge date</th>
-      <th>Zip</th>
-      <th>State</th>
-      <th>City</th>
+      <th>Room</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,12 +17,9 @@
     <% @patients.each do |patient| %>
       <tr>
         <td><%= patient.name %></td>
-        <td><%= patient.street_address %></td>
         <td><%= patient.admit_date %></td>
         <td><%= patient.discharge_date %></td>
-        <td><%= patient.zip %></td>
-        <td><%= patient.state %></td>
-        <td><%= patient.city %></td>
+        <td><%= patient.room.try(:location) %></td>
         <td><%= link_to 'Show', patient %></td>
         <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
         <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>

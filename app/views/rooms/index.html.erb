@@ -3,9 +3,11 @@
 <table>
   <thead>
     <tr>
-      <th>Number</th>
-      <th>Bed</th>
+      <th>Location</th>
       <th>Privacy</th>
+      <th>Patient #</th>
+      <th>Patient</th>
+      <th>Discharge Date</th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,9 +17,11 @@
   <tbody>
     <% @rooms.each do |room| %>
       <tr>
-        <td><%= room.number %></td>
-        <td><%= room.bed %></td>
+        <td><%= room.location %></td>
         <td><%= room.privacy %></td>
+        <td><%= room.patient.try(:id) %></td>
+        <td><%= room.patient.try(:name) %></td>
+        <td><%= room.patient.try(:discharge_date) %></td>
         <td><%= link_to 'Show', room %></td>
         <td><%= link_to 'Edit', edit_room_path(room) %></td>
         <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>

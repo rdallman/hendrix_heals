@@ -13,15 +13,19 @@
 
   <div class="field">
     <%= f.label :number %><br>
-    <%= f.number_field :number %>
+    <%= f.collection_select :id, Room.all, :id, :number %>
   </div>
   <div class="field">
     <%= f.label :bed %><br>
-    <%= f.text_field :bed %>
+    <%= f.select :bed, ["A","B"] %>
   </div>
   <div class="field">
     <%= f.label :privacy %><br>
-    <%= f.text_field :privacy %>
+    <%= f.select :privacy, ["SP","PR"] %>
+  </div>
+  <div class="field">
+    <%= f.label :patient %><br>
+    <%= f.collection_select :patient_id, Patient.all, :id, :name %>
   </div>
   <div class="actions">
     <%= f.submit %>

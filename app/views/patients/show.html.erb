@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>ID:</strong>
+  <%= @patient.id %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @patient.name %>
 </p>
 
 <p>
-  <strong>Street address:</strong>
-  <%= @patient.street_address %>
+  <strong>Address:</strong>
+  <%= @patient.address %>
 </p>
 
 <p>
@@ -20,38 +25,22 @@
   <%= @patient.discharge_date %>
 </p>
 
+
 <p>
-  <strong>Zip:</strong>
-  <%= @patient.zip %>
+  <strong>Room:</strong>
+  <%= @patient.room.try(:location) %>
 </p>
 
 <p>
-  <strong>State:</strong>
-  <%= @patient.state %>
+  <strong>Insurance:</strong>
+  <%= @patient.insurance %>
 </p>
 
 <p>
-  <strong>City:</strong>
-  <%= @patient.city %>
+  <strong>Insurance Policy:</strong>
+  <%= @patient.insurance_policy %>
 </p>
 
-<p>
-  <strong>ID:</strong>
-  <%= @patient.id %>
-</p>
-
-<p>
-  <strong>Procedures:</strong>
-  <% @patient.procedures.each do |p| %>
-    <li>
-    <%= p.name %>
-    <%= p.category %>
-    <%= p.cost %>
-    <%= p.time %>
-    <%= p.physician.name %>
-    </li>
-  <% end %>
-</p>
-
+<%= link_to 'Bill', bill_patient_path(@patient) %> |
 <%= link_to 'Edit', edit_patient_path(@patient) %> |
 <%= link_to 'Back', patients_path %>

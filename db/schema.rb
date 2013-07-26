@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130725173336) do
+ActiveRecord::Schema.define(version: 20130725212715) do
 
   create_table "patients", force: true do |t|
     t.string   "name"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20130725173336) do
 
   create_table "physicians", force: true do |t|
     t.string   "name"
-    t.integer  "phone"
+    t.string   "phone"
     t.integer  "office"
     t.datetime "created_at"
     t.datetime "updated_at"

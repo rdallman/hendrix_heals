@@ -18,12 +18,12 @@
   <tbody>
     <% @procedures.each do |procedure| %>
       <tr>
-        <td><%= procedure.name %></td>
-        <td><%= procedure.category %></td>
-        <td><%= procedure.cost %></td>
-        <td><%= procedure.time %></td>
-        <td><%= procedure.physician_id %></td>
-        <td><%= procedure.patient_id %></td>
+        <td><%= procedure.try(:name) %></td>
+        <td><%= procedure.try(:category) %></td>
+        <td><%= procedure.try(:cost) %></td>
+        <td><%= procedure.try(:time) %></td>
+        <td><%= procedure.physician.try(:name) %></td>
+        <td><%= procedure.patient.try(:name) %></td>
         <td><%= link_to 'Show', procedure %></td>
         <td><%= link_to 'Edit', edit_procedure_path(procedure) %></td>
         <td><%= link_to 'Destroy', procedure, method: :delete, data: { confirm: 'Are you sure?' } %></td>

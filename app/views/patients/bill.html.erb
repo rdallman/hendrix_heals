@@ -1,0 +1,52 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @patient.name %>
+</p>
+
+<p>
+  <strong>ID:</strong>
+  <%= @patient.id %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @patient.address %>
+</p>
+
+<p>
+  <strong>Admit date:</strong>
+  <%= @patient.admit_date %>
+</p>
+
+<p>
+  <strong>Discharge date:</strong>
+  <%= @patient.discharge_date %>
+</p>
+
+<p>
+  <strong>Procedures:</strong>
+  <table>
+    <thead>
+      <tr>
+        <th>Item Code</th>
+        <th>Name</th>
+        <th>Cost</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @patient.procedures.each do |p| %>
+        <tr>
+          <td><%= p.id %></td>
+          <td><%= p.name %></td>
+          <td><%= p.cost %></td>
+        </tr>
+      <% end %>
+      </tbody>
+  </table>
+</p>
+
+<%= link_to 'Back', @patient %>

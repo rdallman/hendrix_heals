@@ -21,6 +21,7 @@
     <li>
     <%= p.patient.id %>
     <%= p.patient.name %>
+    <%= p.patient.room.try(:location) %>
     <%= p.name %>
   <% end %>
 </p>
