@@ -26,6 +26,7 @@ gem 'jquery-rails', '2.2.1'
 gem 'turbolinks', '1.1.1'
 
 gem 'faker', '1.1.2'
+gem 'flat-ui-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '1.0.2'

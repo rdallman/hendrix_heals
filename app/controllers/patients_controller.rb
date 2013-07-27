@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-  before_action :set_patient, only: [:show, :checkout, :bill, :edit, :update, :destroy]
+  before_action :set_patient, only: [:show, :bill, :edit, :update, :destroy]
 
   # GET /patients
   # GET /patients.json
@@ -10,15 +10,6 @@ class PatientsController < ApplicationController
   # GET /patients/1
   # GET /patients/1.json
   def show
-  end
-
-  def checkout
-    respond_to do |format|
-      if @patient.update_attributes(discharge_date: Date.today)
-        format.html { redirect_to patients_url, notice: 'Checkout out' }
-        format.json { head :no_content }
-      end
-    end
   end
 
   def bill
@@ -83,6 +74,6 @@ class PatientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
-      params.require(:patient).permit(:id, :name, :street_address, :admit_date, :discharge_date, :zip, :state, :city, :room_id)
+      params.require(:patient).permit(:patient, :name, :street_address, :admit_date, :discharge_date, :zip, :state, :city, :room_id)
     end
 end

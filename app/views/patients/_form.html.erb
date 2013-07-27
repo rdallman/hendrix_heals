@@ -32,6 +32,10 @@
     <%= f.text_field :city %>
   </div>
   <div class="field">
+    <%= f.label :discharge_date %><br>
+    <%= f.date_select :discharge_date, {include_blank: 'None'} %>
+  </div>
+  <div class="field">
     <%= f.label :room_id  %><br>
     <%= f.collection_select :room_id, Room.joins('LEFT OUTER JOIN patients ON patients.room_id = rooms.id').where("patients.id IS null"), :id, :location %>
   </div>

@@ -77,7 +77,7 @@ def create_procedures
                   "Cat Scan"]
     patient = Patient.all.sample
     doc = Physician.all.sample
-    time = [1..12].sample
+    time = Random.new.rand(1..12)
     treatment = Treatment.all.sample
     operation = operations.sample
     Procedure.create!(name: operation,

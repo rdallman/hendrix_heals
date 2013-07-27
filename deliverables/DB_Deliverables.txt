@@ -1,0 +1,93 @@
+(1) 	a. ER diagram attached
+	b. Text annotations of assumptions, constraints, etc
+    Assumptions:
+	If private room, there will be 0 or 1 patients with bed A
+        If semi-private room, there will be 0, 1, or 2 patients with beds A,B
+	Rates are rounded up to the whole hour
+	Patient may or may not have insurance
+
+    Constraints:
+	Room Visit 3+ times per day
+	Attendant Care 0+ nurse(s), 0+ staff
+	Dr. Consultation 1+ Doctor(s), 1 time per day
+
+	Each patient has 1 bed
+	Each patient has primary doctor
+	Each treatment administered by 1+ Doc, Nurse, Tech, or Staff
+
+        100 beds
+	20 private rooms
+	40 semi-private rooms with 2 beds each
+
+
+ (2)  a.	
+Patients(id, name, street_address, admit_date, discharge_date, zip, state, city, insurance, insurance_policy, room_id)
+      	Physicians(id,name, phone, office)
+	Procedures(id, name, time, physician_id, patient_id, treatment_id)
+	Rooms(id, number, bed, privacy)
+	Treatments(id, category, cost)
+
+b.
+    Patients:
+	are assigned an ID number type int
+	has a name of type string
+	has an address split in four values
+		has a street name of type string
+		has a zip of type int
+		has a state of type string
+		has a city of type string
+	has two patient date values
+		has a discharge date of type date for the date the patient leaves the hospital 
+		has an admit of type date for the date the patient arrives at the hospital 
+	has an insurance information split into two values
+		has an insurance of type string for the name of the insurance company
+		has an insurance policy of type int for the patients policy number
+    Physicians:
+	are assigned an ID number type int
+	has a name type string
+	has an Office number type int
+	has a phone number type string
+    Procedure:
+	are assigned an ID type int
+	has a name of type string
+	has a time for the total time the procedure took as type int
+	has a physician id as type int that is connected to the physicians object
+	has a patient id type int that is connected to the patient object
+	has a treatment id type int that is connected to the treatment object
+    Treatment:
+	are assigned an ID number type int
+	has a type of type string for the treatment performed
+	has a cost of type int for the cost of the procedure preformed
+    Room:
+	are assigned an ID number type int
+	has a bed type string for either bed 'A' or bed 'B'
+	has a number of type int for the physical room number
+	has a privacy status as type string for weather the room is private or shared
+    Connections:
+	There is a one to one relationship for rooms and patients stating that no matter the room privacy status each room.id correlates to exactly one patient
+	There is a one to many relationship for patient and procedure where a patient can have many different procedure.id but each procedure can only have on patient.id
+	There is a many to many relationship for physicians and procedure. A procedure can have many physicians and a physician can preform many procedures
+	There is a one to many relationship for treatments and procedure. A procedure can have many treatments but a treatment can only belong to one procedure.id 
+ c.
+	Patients: {id-> name, street_address, admit_date, discharge_date, zip, state, city, insurance, insurance_policy; zip->city, state} Since zip determines the city and state, it would be better if we added another table containing only zip, city, and state.	Physicians:{id->name, phone, office} The physician id determines the name, phone, and office number. 	Procedure:{id->name, category, cost, time, physician_id, patient_id; category,time->cost} Initially we had one table for storing name, category, cost, time, physician_id, and patient_id. We decided that since category and time determine cost, we should add the table Treatment(id, cost, type) where {id->cost, type} the id determines the cost and type of treatment. When we added the Treatment table, we added the treatmentID attribute to Procedure.	Rooms: {id->number, bed, privacy, patient_id} 
+
+
+ d.
+    Assumptions:
+	If their is a discharge date then a bill will have already been generated
+	If their is an admit date then a patient is assigned a room
+	If a patient is assigned a room.bed B then the room is semi private
+	Each treatment ID has a corresponding dollar value amount
+	
+    Constraints:
+	Every patient, treatment, and physician id in procedure must exist in patient, physician, and treatment tables.
+	Every patient id in rooms must exist in patient table
+	When a patient is issued a room the room is no longer to be assigned to any other patient
+	There can be no new treatments add to the treatment table
+	There can be no new rooms added to the rooms table
+	If the room is private then the rooms.bed must equal A
+
+	
+	
+
+	
