@@ -1,4 +1,4 @@
-# HENDRIX HEALS RESIDENTIAL
+# Hendrix Heals Residential
 
 ### Doc, our deliverables are in deliverables/
 
