@@ -42,11 +42,16 @@
         <tr>
           <td><%= p.id %></td>
           <td><%= p.name %></td>
-          <td><%= p.cost %></td>
+          <td><%= p.treatment.cost %></td>
         </tr>
       <% end %>
       </tbody>
   </table>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @patient.bill_total %>
 </p>
 
 <%= link_to 'Back', @patient %>

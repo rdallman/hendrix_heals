@@ -8,4 +8,12 @@ class Patient < ActiveRecord::Base
     return [street_address, city, state, zip].join(', ')
   end
 
+  def bill_total
+    total = 0
+    procedures.each do |p|
+      total += p.treatment.cost
+    end
+    return total
+  end
+
 end
