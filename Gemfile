@@ -28,7 +28,11 @@ gem 'jquery-rails', '2.2.1'
 gem 'turbolinks', '1.1.1'
 
 gem 'faker', '1.1.2'
-gem 'flat-ui-rails'
+
+#bootstrap 
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :github => 'anjlab/bootstrap-rails',
+                              :branch => '3.0.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '1.0.2'

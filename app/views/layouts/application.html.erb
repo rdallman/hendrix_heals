@@ -7,12 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="navbar-inner">
+  <div class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-        <%= link_to "Hendrix Heals", '/', id: "logo" %>
         <nav>
-          <ul class="nav pull-right">
+          <a class="navbar-brand" <%= link_to "Hendrix Heals", '/' %></a>
+          <ul class="nav navbar-nav pull-right">
             <li><%= link_to "Patients",     '/patients' %></li>
             <li><%= link_to "Physicians",   '/physicians' %></li>
             <li><%= link_to "Procedures",   '/procedures' %></li>
@@ -20,10 +19,11 @@
           </ul>
         </nav>
       </div>
-    </div>
-  </header>
+  </div>
 
-<%= yield %>
+  <div class ="container" >
+    <%= yield %>
+  </div>
 
 </body>
 </html>

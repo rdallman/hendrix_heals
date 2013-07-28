@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/anjlab/bootstrap-rails.git
+  revision: 7556d2c17115e8d4e5f8ba17b19e6cb6fdece1a3
+  branch: 3.0.0
+  specs:
+    anjlab-bootstrap-rails (3.0.0.rc1)
+      railties (>= 3.0)
+      sass (>= 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -40,7 +49,6 @@ GEM
       multi_json (~> 1.0)
     faker (1.1.2)
       i18n (~> 0.5)
-    flat-ui-rails (0.0.2)
     hike (1.2.3)
     i18n (0.6.4)
     jbuilder (1.0.2)
@@ -117,9 +125,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  anjlab-bootstrap-rails!
   coffee-rails (= 4.0.0)
   faker (= 1.1.2)
-  flat-ui-rails
   jbuilder (= 1.0.2)
   jquery-rails (= 2.2.1)
   pg (= 0.15.1)
