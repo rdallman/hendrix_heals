@@ -28,12 +28,17 @@
 
 <p>
   <strong>Procedures:</strong>
-  <table>
+  <table class="table table-striped">
     <thead>
       <tr>
         <th>Item Code</th>
         <th>Name</th>
         <th>Cost</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
         <th></th>
       </tr>
     </thead>
@@ -45,6 +50,11 @@
           <td><%= p.treatment.cost %></td>
         </tr>
       <% end %>
+        <tr>
+          <td></td>
+          <td></td>
+          <td><strong>$<%= @patient.bill_total %> Total</strong></td>
+        </tr>
       </tbody>
   </table>
 </p>
