@@ -7,17 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-        <nav>
-          <a class="navbar-brand" <%= link_to "Hendrix Heals", '/' %></a>
-          <ul class="nav navbar-nav pull-right">
-            <li><%= link_to "Patients",     '/patients' %></li>
-            <li><%= link_to "Physicians",   '/physicians' %></li>
-            <li><%= link_to "Procedures",   '/procedures' %></li>
-            <li><%= link_to "Rooms",        '/rooms' %></li>
-          </ul>
-        </nav>
+        <a class="navbar-brand" <%= link_to "Hendrix Heals", root_path %></a>
+        <ul class="nav navbar-nav pull-right">
+          <li class="<%= 'active' if current_page?(patients_path) %>"><a <%= link_to   "Patients",   patients_path %></a></li>
+          <li class="<%= 'active' if current_page?(physicians_path) %>"><a <%= link_to "Physicians", physicians_path %></a></li>
+          <li class="<%= 'active' if current_page?(procedures_path) %>"><a <%= link_to "Procedures", procedures_path %></a></li>
+          <li class="<%= 'active' if current_page?(rooms_path) %>"><a <%= link_to      "Rooms",      rooms_path%></a></li>
+        </ul>
       </div>
   </div>
 
