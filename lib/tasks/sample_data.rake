@@ -1,10 +1,18 @@
 namespace :db do
   desc "Fill db with sample data"
   task populate: :environment do
-    create_rooms
-    create_patients_and_physicians
-    create_treatments
-    create_procedures
+#   create_rooms
+#   create_patients_and_physicians
+#   create_treatments
+#   create_procedures
+    add_phones
+  end
+end
+
+def add_phones
+  Physician.all.each do |p|
+    phone = Faker::PhoneNumber.phone_number
+    p.update!(phone: phone)
   end
 end
 
