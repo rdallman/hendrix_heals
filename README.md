@@ -1,6 +1,6 @@
 # Hendrix Heals Residential
 
-### Doc, our deliverables are in deliverables/
+### Rails 4 / Bootstrap 3 RC1
 
 ### Find all of your wildest dreams at <http://hendrix-heals.herokuapp.com>
 
